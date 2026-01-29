@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Celestia Gate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Cinzel', 'serif'],
+              sans: ['Quicksand', 'sans-serif'],
+            },
+            colors: {
+              genshin: {
+                dark: '#181b2c',
+                blue: '#2c3e50',
+                gold: '#d4c498',
+                goldLight: '#f3e8c6',
+                purple: '#5e548e',
+                element: 'rgba(212, 196, 152, 0.2)'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom Cursor - Genshin Style Arrow */
+      :root {
+        --cursor-default: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L14 28L18 18L28 14L4 4Z" fill="%23ECE5D8" stroke="%233E4556" stroke-width="2" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" fill="%233E4556"/></svg>') 4 4, auto;
+        --cursor-pointer: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L14 28L18 18L28 14L4 4Z" fill="%23d4c498" stroke="%233E4556" stroke-width="2" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" fill="%233E4556"/></svg>') 4 4, pointer;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* completely disable window scroll */
+        position: fixed; /* fix body in place */
+        background-color: #181b2c;
+        touch-action: none; /* disable native touch gestures like pull-to-refresh */
+        cursor: var(--cursor-default);
+      }
+      
+      button, a, .cursor-pointer {
+        cursor: var(--cursor-pointer) !important;
+      }
+      
+      /* Aggressively hide scrollbars for all internal scrollable elements */
+      * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      *::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.29.2"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
